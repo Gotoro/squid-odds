@@ -13,10 +13,7 @@ try:
         glass = 18
         # if one player jumps and doesn't break the glass, then we remove that glass, as the path is known
         # if the player jumps and dies, we remove both the player and that glass
-        while players > 0 or glass > 0:
-          
-            if players <= 0 or glass <= 0:
-                break
+        while players > 0 and glass > 0:
                 
             if randint(0, 1):
                 glass -= 1
@@ -29,10 +26,8 @@ try:
         
         if players not in winning_percentage:
             winning_percentage[players] = 0
-            winning_percentage[players] += 1
-        else:
-            winning_percentage[players] += 1
 
+        winning_percentage[players] += 1
 
         print(f"Total games played: {games_count}")
         print(f"Current average players at the end: {players_in_end // games_count}")
